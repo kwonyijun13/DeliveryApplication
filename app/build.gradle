@@ -1,0 +1,83 @@
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    namespace 'com.kwonyijun.deliveryapplication'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.kwonyijun.deliveryapplication"
+        minSdk 23
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    // GIF
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.23'
+
+    // FIREBASE
+    // Import the Firebase BoM (app will always use compatible versions of Firebase Android libraries)
+    implementation(platform("com.google.firebase:firebase-bom:32.4.1")) // When using the BoM, you don't specify versions in Firebase library dependencies
+
+    // Firebase SDK for Google Analytics
+    implementation "com.google.firebase:firebase-analytics"
+
+    // Firebase Cloud Storage library
+    implementation "com.google.firebase:firebase-storage"
+
+    // FirebaseUI Storage only
+    implementation 'com.firebaseui:firebase-ui-storage:7.2.0'
+
+    // See https://firebase.google.com/docs/android/setup#available-libraries
+    // For example, add the dependencies for Firebase Authentication and Cloud Firestore
+    implementation "com.google.firebase:firebase-auth"
+    implementation "com.google.firebase:firebase-firestore"
+
+    // PICASSO
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    // FACEBOOK
+    // implementation 'com.facebook.android:facebook-android-sdk:8.x'
+
+    // KAKAO
+    implementation "com.kakao.sdk:v2-all:2.17.0" // Add all modules (Available in 2.11.0 or higher)
+
+    // NAVER MAPS
+    implementation 'com.naver.maps:map-sdk:3.17.0'
+
+    implementation "com.kakao.sdk:v2-user:2.17.0" // Kakao Login
+    implementation "com.kakao.sdk:v2-talk:2.17.0" // Kakao Talk Social, Kakao Talk Messaging
+    implementation "com.kakao.sdk:v2-friend:2.17.0" // Friend picker
+    implementation "com.kakao.sdk:v2-story:2.17.0" // Kakao Story
+    implementation "com.kakao.sdk:v2-share:2.17.0" // Kakao Talk Sharing
+    implementation "com.kakao.sdk:v2-navi:2.17.0" // Kakao Navi
+    implementation "com.kakao.sdk:v2-cert:2.17.0" // Kakao Certificate
+
+    // GOOGLE PLAY SERVICES LOCATION API
+    implementation 'com.google.android.gms:play-services-location:17.1.0'
+
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}
